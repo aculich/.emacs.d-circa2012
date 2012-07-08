@@ -38,6 +38,7 @@
 (global-set-key (kbd "C-c C-v") 'magit-status)
 
 (defun jknav-uninstall-keys ()
+  (interactive)
   (local-unset-key (kbd "j"))
   (local-unset-key (kbd "k"))
   (message "Uninstalled j/k navigation keys"))
@@ -61,6 +62,7 @@
                              (format "C-%s" key))))))
 
 (defun jknav-install-keys (&optional force)
+  (interactive)
   (if (or force buffer-read-only)
       (let* ((match (if buffer-read-only
                         "self-insert-command\\|undefined"

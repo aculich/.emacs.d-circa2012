@@ -34,6 +34,8 @@
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
 
+(define-key isearch-mode-map (kbd "C-o")       'isearch-occur)
+
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)
 

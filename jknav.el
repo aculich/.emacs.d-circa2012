@@ -45,9 +45,11 @@
                                   (or match jknav-search-key-pattern)
                                   (symbol-name binding))
                              binding)))
-                       (list key
-                             (format "M-%s" key)
-                             (format "C-%s" key))))))
+                       (cond ((listp key) key)
+                             ((stringp key)
+                              (list key
+                                    (format "M-%s" key)
+                                    (format "C-%s" key))))))))
 
 (defun jknav-install-keys (&optional force)
   (interactive)

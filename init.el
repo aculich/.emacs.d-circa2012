@@ -3,6 +3,9 @@
 
 (set-cursor-color "red")
 
+(custom-set-faces
+ '(highlight ((t (:background "grey5")))))
+
 (put 'narrow-to-region 'disabled nil)
 
 (global-set-key (kbd "C-<tab>") 'other-window)

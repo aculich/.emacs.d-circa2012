@@ -51,30 +51,47 @@
                                     (format "M-%s" key)
                                     (format "C-%s" key))))))))
 
+(defun jknav-install-keys-dired (&optional force)
+  (interactive)
+  (cond
+   ((and buffer-read-only
+         (eq major-mode 'dired-mode))
+    (local-set-key (kbd "C-j") 'dired-goto-file)
+    (local-set-key (kbd "j")   'dired-next-line)
+    (local-set-key (kbd "k")   'dired-previous-line)
+    (local-set-key (kbd "n")   'dired-next-subdir)
+    (local-set-key (kbd "p")   'dired-prev-subdir)
+    (local-set-key (kbd "SPC") 'scroll-up-command)
+    (local-set-key (kbd ";")   'scroll-down-command))
+   (t nil)))
+
 (defun jknav-install-keys (&optional force)
   (interactive)
-  (if (or force buffer-read-only)
-      (let* ((match (if buffer-read-only
-                        "self-insert-command\\|undefined"
-                      "undefined"))
-             (j (jknav-search-key-bindings "j" match))
-             (k (jknav-search-key-bindings "k" match))
-             (next (jknav-search-key-bindings "n"))
-             (prev (jknav-search-key-bindings "p"))
-             (scroll-up (jknav-search-key-bindings '("SPC" "C-v")))
-             (scroll-down (jknav-search-key-bindings '("DEL" ";" "M-v"))))
+  (cond
+   ((or force buffer-read-only)
+    (cond ((eq major-mode 'dired-mode) (jknav-install-keys-dired force))
+          (t
+           (let* ((match (if buffer-read-only
+                             "self-insert-command\\|undefined"
+                           "undefined"))
+                  (j (jknav-search-key-bindings "j" match))
+                  (k (jknav-search-key-bindings "k" match))
+                  (next (jknav-search-key-bindings "n"))
+                  (prev (jknav-search-key-bindings "p"))
+                  (scroll-up (jknav-search-key-bindings '("SPC" "C-v")))
+                  (scroll-down (jknav-search-key-bindings '("DEL" ";" "M-v"))))
 
-        ;; FIXME: should be this:
-        ;;     (when (and j k next prev)
-        ;; to avoid clashing with existing keys
-        (when (and next prev)
-          (local-set-key (kbd "j") next)
-          (local-set-key (kbd "k") prev)
-          (when (and scroll-up scroll-down)
-            (local-set-key (kbd " ") scroll-up)
-            (local-set-key (kbd ";") scroll-down))
-          (message "Installed j/k navigation keys")))
-    (jknav-uninstall-keys)))
+             ;; FIXME: should be this:
+             ;;     (when (and j k next prev)
+             ;; to avoid clashing with existing keys
+             (when (and next prev)
+               (local-set-key (kbd "j") next)
+               (local-set-key (kbd "k") prev)
+               (when (and scroll-up scroll-down)
+                 (local-set-key (kbd " ") scroll-up)
+                 (local-set-key (kbd ";") scroll-down))
+               (message "Installed j/k navigation keys"))))))
+   (t (jknav-uninstall-keys))))
 
 (defadvice toggle-read-only (after jknav-update-keys)
   (if buffer-read-only

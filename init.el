@@ -1,3 +1,8 @@
+(defvar default-load-path load-path
+  "The default system `load-path' before we modify it.")
+
+(add-to-list 'load-path user-emacs-directory)
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)

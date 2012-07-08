@@ -8,6 +8,11 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+;; add this to the sart of the load-path to override things if the user
+;; already has the sublime packages installed
+(add-to-list 'load-path (expand-file-name "lib/sublime-sanity" user-emacs-directory))
+(load "sublime")
+
 ;; load custom-file after initializing packages
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)

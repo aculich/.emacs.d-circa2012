@@ -34,6 +34,12 @@
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
 
+(defun isearch-yank-sexp ()
+  "Pull next sexp from buffer into search string."
+  (interactive)
+  (isearch-yank-internal (lambda () (forward-sexp 1) (point))))
+(define-key isearch-mode-map (kbd "M-W")       'isearch-yank-sexp)
+(define-key isearch-mode-map (kbd "C-M-w")     'isearch-yank-sexp)
 (define-key isearch-mode-map (kbd "C-o")       'isearch-occur)
 
 (autoload 'magit-status "magit" nil t)

@@ -17,7 +17,8 @@
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
 (eval-after-load "package"
-  '(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t))
+  '(add-to-list 'package-archives
+                '("marmalade" . "http://marmalade-repo.org/packages/") t))
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)

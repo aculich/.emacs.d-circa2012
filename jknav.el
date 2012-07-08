@@ -61,6 +61,7 @@
     (local-set-key (kbd "k")   'dired-previous-line)
     (local-set-key (kbd "n")   'dired-next-subdir)
     (local-set-key (kbd "p")   'dired-prev-subdir)
+    (local-set-key (kbd "'")   'dired-up-directory)
     (local-set-key (kbd "SPC") 'scroll-up-command)
     (local-set-key (kbd ";")   'scroll-down-command))
    (t nil)))

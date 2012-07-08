@@ -1,7 +1,7 @@
 *~
 *.elc
 /auto-save-list
-/elpa/archives
+/elpa
 /backups
-.smex-items
+/.smex-items
 /places

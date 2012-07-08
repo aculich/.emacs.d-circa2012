@@ -65,11 +65,24 @@
     (local-set-key (kbd ";")   'scroll-down-command))
    (t nil)))
 
+(defun jknav-install-keys-help (&optional force)
+  (interactive)
+  (cond
+   ((and buffer-read-only
+         (eq major-mode 'help-mode))
+    (define-key help-mode-map (kbd "l")     'help-go-back)
+    (define-key help-mode-map (kbd ".")     'help-go-forward)
+    (define-key help-mode-map (kbd "j")     'forward-button)
+    (define-key help-mode-map (kbd "k")     'backward-button)
+    (define-key help-mode-map (kbd ";")     'scroll-down))
+   (t nil)))
+
 (defun jknav-install-keys (&optional force)
   (interactive)
   (cond
    ((or force buffer-read-only)
     (cond ((eq major-mode 'dired-mode) (jknav-install-keys-dired force))
+          ((eq major-mode 'help-mode)  (jknav-install-keys-help  force))
           (t
            (let* ((match (if buffer-read-only
                              "self-insert-command\\|undefined"

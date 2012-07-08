@@ -39,6 +39,8 @@
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
 
+(define-key emacs-lisp-mode-map (kbd "C-<return>") 'paredit-close-round-and-newline)
+
 (defun isearch-yank-sexp ()
   "Pull next sexp from buffer into search string."
   (interactive)

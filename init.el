@@ -63,6 +63,9 @@
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)
 
+(eval-after-load "dired+"
+  (setq diredp-font-lock-keywords-1 nil))
+
 (require 'jknav)
 (jknav-initialize)
 

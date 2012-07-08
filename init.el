@@ -40,7 +40,12 @@
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
 
+(defun paredit-close-round-and-newline-and-open-round ()
+  (interactive)
+  (paredit-close-round-and-newline)
+  (paredit-open-round))
 (define-key emacs-lisp-mode-map (kbd "C-<return>") 'paredit-close-round-and-newline)
+(define-key emacs-lisp-mode-map (kbd "C-M-9")      'paredit-close-round-and-newline-and-open-round)
 
 (defun isearch-yank-sexp ()
   "Pull next sexp from buffer into search string."

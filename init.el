@@ -28,14 +28,18 @@
   (local-unset-key (kbd "k"))
   (message "Uninstalled j/k navigation keys"))
 
+(defvar jknav-search-key-pattern
+  "next\\|prev\\|begin\\|end\\|start\\|finish\\|forward\\|backward"
+  "Patterns used by `jknav-search-key-bindings' to detect what
+  function defintion to bind to jknav keys.")
+
 (defun jknav-search-key-bindings (key &optional match)
   (car (remove nil
                (mapcar (lambda (x)
                          (let ((binding
                                 (key-binding (read-kbd-macro x))))
                            (when (string-match
-                                  (or match
-                                      "next\\|prev\\|begin\\|end\\|start\\|finish")
+                                  (or match jknav-search-key-pattern)
                                   (symbol-name binding))
                              binding)))
                        (list key

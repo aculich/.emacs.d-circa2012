@@ -11,3 +11,6 @@
 
 (eval-after-load "package"
   '(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t))
+
+(eval-after-load "magit"
+  '(global-set-key (kbd "C-c C-v") 'magit-status))

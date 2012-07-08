@@ -60,7 +60,9 @@
              (j (jknav-search-key-bindings "j" match))
              (k (jknav-search-key-bindings "k" match))
              (next (jknav-search-key-bindings "n"))
-             (prev (jknav-search-key-bindings "p")))
+             (prev (jknav-search-key-bindings "p"))
+             (scroll-up (jknav-search-key-bindings '("SPC" "C-v")))
+             (scroll-down (jknav-search-key-bindings '("DEL" ";" "M-v"))))
 
         ;; FIXME: should be this:
         ;;     (when (and j k next prev)
@@ -68,6 +70,9 @@
         (when (and next prev)
           (local-set-key (kbd "j") next)
           (local-set-key (kbd "k") prev)
+          (when (and scroll-up scroll-down)
+            (local-set-key (kbd " ") scroll-up)
+            (local-set-key (kbd ";") scroll-down))
           (message "Installed j/k navigation keys")))
     (jknav-uninstall-keys)))
 

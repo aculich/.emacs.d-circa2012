@@ -1,6 +1,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+(set-cursor-color "red")
+
 (put 'narrow-to-region 'disabled nil)
 
 (global-set-key (kbd "C-<tab>") 'other-window)

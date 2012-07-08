@@ -32,7 +32,7 @@
   (message "Uninstalled j/k navigation keys"))
 
 (defvar jknav-search-key-pattern
-  "next\\|prev\\|begin\\|end\\|start\\|finish\\|forward\\|backward"
+  "next\\|prev\\|begin\\|end\\|start\\|finish\\|forward\\|backward\\|up\\|down"
   "Patterns used by `jknav-search-key-bindings' to detect what
   function defintion to bind to jknav keys.")
 

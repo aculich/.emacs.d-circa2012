@@ -69,12 +69,16 @@
           (message "Installed j/k navigation keys")))
     (jknav-uninstall-keys)))
 
-(add-hook 'after-change-major-mode-hook 'jknav-install-keys t)
-
-(defadvice toggle-read-only (after jknav-update-keys activate)
+(defadvice toggle-read-only (after jknav-update-keys)
   (if buffer-read-only
       (jknav-install-keys)
     (jknav-uninstall-keys)))
+
+;;;###autoload
+(defun jknav-initialize ()
+  (interactive)
+  (add-hook 'after-change-major-mode-hook 'jknav-install-keys t)
+  (ad-enable-advice 'toggle-read-only 'after 'jknav-update-keys))
 
 (provide 'jknav)
 

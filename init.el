@@ -51,3 +51,7 @@
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)
+
+(require 'jknav)
+(jknav-initialize)
+

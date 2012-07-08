@@ -1,3 +1,9 @@
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+
+;; load custom-file after initializing packages
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
@@ -26,10 +32,6 @@
              [(control return)] 'file-cache-minibuffer-complete)
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
-
-(eval-after-load "package"
-  '(add-to-list 'package-archives
-                '("marmalade" . "http://marmalade-repo.org/packages/") t))
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)

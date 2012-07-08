@@ -22,6 +22,7 @@
 
 (setq visible-bell nil)
 
+(global-set-key (kbd "C-z")     'undo)
 (global-set-key (kbd "C-<tab>") 'other-window)
 (global-set-key (kbd "C-q")     'kill-region)
 (global-set-key (kbd "C-w")     'backward-kill-word)

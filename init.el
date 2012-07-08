@@ -10,7 +10,8 @@
 (set-cursor-color "red")
 
 (custom-set-faces
- '(highlight ((t (:background "grey5")))))
+ '(highlight ((t (:background "grey5"))))
+ '(show-paren-match ((t (:foreground "red")))))
 
 (put 'narrow-to-region 'disabled nil)
 

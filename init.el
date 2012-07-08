@@ -22,6 +22,11 @@
 
 (global-set-key (kbd "C-M-S-l") 'switch-to-other-buffer)
 
+(define-key minibuffer-local-map
+             [(control return)] 'file-cache-minibuffer-complete)
+(define-key minibuffer-local-map
+             [(control tab)]    'other-window)
+
 (eval-after-load "package"
   '(add-to-list 'package-archives
                 '("marmalade" . "http://marmalade-repo.org/packages/") t))

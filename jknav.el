@@ -85,7 +85,8 @@
 (defun jknav-initialize ()
   (interactive)
   (add-hook 'after-change-major-mode-hook 'jknav-install-keys t)
-  (ad-enable-advice 'toggle-read-only 'after 'jknav-update-keys))
+  (ad-enable-advice 'toggle-read-only 'after 'jknav-update-keys)
+  (jknav-install-keys))
 
 (provide 'jknav)
 

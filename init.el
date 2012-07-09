@@ -22,8 +22,11 @@
      starter-kit-bindings starter-kit-eshell starter-kit-js
      undo-tree virtualenv)))
 
-;; add this to the sart of the load-path to override things if the user
-;; already has the sublime packages installed
+;; add sublime-sanity to the sart of the load-path to override the sublime
+;; package if it is already installed
+(unless (file-exists-p (expand-file-name "sublime-sanity"))
+  (shell-command
+   "git clone https://github.com/aculich/sublime-sanity.el.git ~/.emacs.d/sublime-sanity"))
 (add-to-list 'load-path (expand-file-name "sublime-sanity" user-emacs-directory))
 (load "sublime")
 

@@ -79,7 +79,9 @@
 (global-set-key (kbd "C-M-S-l") 'switch-to-other-buffer)
 
 (define-key minibuffer-local-map
-             [(control return)] 'file-cache-minibuffer-complete)
+             [(meta tab)]       'file-cache-minibuffer-complete)
+(define-key minibuffer-local-map
+             [(control return)] 'ido-select-text)
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
 

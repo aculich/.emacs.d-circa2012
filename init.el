@@ -28,6 +28,7 @@
   (shell-command
    "git clone https://github.com/aculich/sublime-sanity.el.git ~/.emacs.d/sublime-sanity"))
 (add-to-list 'load-path (expand-file-name "sublime-sanity" user-emacs-directory))
+(delete-other-windows)
 (load "sublime")
 
 ;; load custom-file after initializing packages

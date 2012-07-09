@@ -71,5 +71,16 @@
 (eval-after-load "dired+"
   (setq diredp-font-lock-keywords-1 nil))
 
+(global-set-key (kbd "C-c a"  ) 'org-agenda)
+(global-set-key (kbd "C-c C-b") 'org-iswitchb)
+(global-set-key (kbd "C-c C-l") 'org-store-link)
+(global-set-key (kbd "C-c C-m") 'org-capture)
+(global-set-key (kbd "C-c m"  ) 'org-capture)
+
+(eval-after-load "org"
+  '(progn
+     (define-key org-mode-map (kbd "C-S-<iso-lefttab>") 'other-window-reverse)
+     (define-key org-mode-map (kbd "C-<tab>") 'other-window)))
+
 (require 'jknav)
 (jknav-initialize)

@@ -7,6 +7,9 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
+(unless package-activated-list
+  (mapcar (lambda (x) (ignore-errors (package-install x)))
+          '(adaptive-wrap all android-mode apache-mode ascii browse-kill-ring c-eldoc cmake-mode coffee-mode color-file-completion crontab-mode csv-mode desktop dircmp dired+ dired-details+ dired-details dired-single doc-mode dpaste drupal-mode emacsd-tile find-file-in-git-repo gist git-auto-commit-mode git-commit grep-a-lot grep-o-matic handlebars-mode heroku html-script-src htmlize http-twiddle httpcode ibuffer-vc ido-yes-or-no idomenu igrep image-dired+ ioccur ipython isearch+ jenkins-watch keyfreq keywiz magit-gh-pulls gh magithub markdown-mode furl minimap mustache-mode pastebin pep8 php-mode pivotal-tracker powershell puppet-mode sass-mode haml-mode starter-kit starter-kit-bindings starter-kit-eshell starter-kit-js starter-kit-lisp elisp-slime-nav starter-kit-ruby paredit undo-tree virtualenv wget wgrep yaml-mode yasnippet yasnippet-bundle)))
 
 ;; add this to the sart of the load-path to override things if the user
 ;; already has the sublime packages installed

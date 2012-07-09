@@ -84,6 +84,7 @@
    ((or force buffer-read-only)
     (cond ((eq major-mode 'dired-mode) (jknav-install-keys-dired force))
           ((eq major-mode 'help-mode)  (jknav-install-keys-help  force))
+          ((eq major-mode 'calendar-mode)  nil)
           (t
            (let* ((match (if buffer-read-only
                              "self-insert-command\\|undefined"

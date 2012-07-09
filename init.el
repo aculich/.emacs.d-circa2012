@@ -73,4 +73,3 @@
 
 (require 'jknav)
 (jknav-initialize)
-

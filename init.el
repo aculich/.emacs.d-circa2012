@@ -64,7 +64,7 @@
   (interactive "p")
   (other-window (- (or arg 1))))
 (global-set-key (kbd "C-S-<iso-lefttab>") 'other-window-reverse)
-(global-set-key (kbd "C-<tab>") 'other-window)
+(global-set-key (kbd "C-<tab>")           'other-window)
 
 (global-set-key (kbd "C-z")     'undo)
 (global-set-key (kbd "C-q")     'kill-region)

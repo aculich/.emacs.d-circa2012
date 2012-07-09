@@ -27,8 +27,13 @@
 
 (setq visible-bell nil)
 
-(global-set-key (kbd "C-z")     'undo)
+(defun other-window-reverse (arg)
+  (interactive "P")
+  (other-window (* -1 (or arg 1))))
+(global-set-key (kbd "C-S-<iso-lefttab>") 'other-window-reverse)
 (global-set-key (kbd "C-<tab>") 'other-window)
+
+(global-set-key (kbd "C-z")     'undo)
 (global-set-key (kbd "C-q")     'kill-region)
 (global-set-key (kbd "C-w")     'backward-kill-word)
 (global-set-key (kbd "C-x b")   'list-buffers)

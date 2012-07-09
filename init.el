@@ -46,8 +46,8 @@
 (setq visible-bell nil)
 
 (defun other-window-reverse (arg)
-  (interactive "P")
-  (other-window (* -1 (or arg 1))))
+  (interactive "p")
+  (other-window (- (or arg 1))))
 (global-set-key (kbd "C-S-<iso-lefttab>") 'other-window-reverse)
 (global-set-key (kbd "C-<tab>") 'other-window)
 

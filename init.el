@@ -109,6 +109,7 @@
      (define-key org-mode-map (kbd "C-S-<iso-lefttab>") 'other-window-reverse)
      (define-key org-mode-map (kbd "C-<tab>") 'other-window)))
 
+;; enable M-y to show kill-ring
 (browse-kill-ring-default-keybindings)
 
 (require 'jknav)

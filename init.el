@@ -16,11 +16,15 @@
   (mapcar
    (lambda (x)
      (ignore-errors (package-install x)))
-   '(coffee-mode find-file-in-project haml-mode ido-ubiquitous
-     less-css-mode magit markdown-mode minimap monokai-theme
-     paredit sass-mode smex yaml-mode yasnippet starter-kit
+   '(browse-kill-ring coffee-mode csv-mode desktop dircmp dired+
+     dired-details dired-details+ dired-single
+     find-file-in-project furl haml-mode ido-ubiquitous igrep
+     image-dired+ ioccur ipython isearch+ less-css-mode magit
+     markdown-mode minimap monokai-theme mustache-mode paredit
+     pivotal-tracker sass-mode smex starter-kit
      starter-kit-bindings starter-kit-eshell starter-kit-js
-     undo-tree virtualenv)))
+     undo-tree virtualenv wget yaml-mode yasnippet
+     yasnippet-bundle)))
 
 ;; add sublime-sanity to the sart of the load-path to override the sublime
 ;; package if it is already installed

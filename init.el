@@ -109,5 +109,7 @@
      (define-key org-mode-map (kbd "C-S-<iso-lefttab>") 'other-window-reverse)
      (define-key org-mode-map (kbd "C-<tab>") 'other-window)))
 
+(browse-kill-ring-default-keybindings)
+
 (require 'jknav)
 (jknav-initialize)

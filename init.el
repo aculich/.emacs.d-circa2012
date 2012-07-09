@@ -10,7 +10,7 @@
 
 ;; add this to the sart of the load-path to override things if the user
 ;; already has the sublime packages installed
-(add-to-list 'load-path (expand-file-name "lib/sublime-sanity" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "sublime-sanity" user-emacs-directory))
 (load "sublime")
 
 ;; load custom-file after initializing packages

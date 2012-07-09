@@ -28,8 +28,7 @@
 (defun jknav-uninstall-keys ()
   (interactive)
   (local-unset-key (kbd "j"))
-  (local-unset-key (kbd "k"))
-  (message "Uninstalled j/k navigation keys"))
+  (local-unset-key (kbd "k")))
 
 (defvar jknav-search-key-pattern
   "next\\|prev\\|begin\\|end\\|start\\|finish\\|forward\\|backward\\|up\\|down"
@@ -104,8 +103,7 @@
                (local-set-key (kbd "k") prev)
                (when (and scroll-up scroll-down)
                  (local-set-key (kbd " ") scroll-up)
-                 (local-set-key (kbd ";") scroll-down))
-               (message "Installed j/k navigation keys"))))))
+                 (local-set-key (kbd ";") scroll-down)))))))
    (t (jknav-uninstall-keys))))
 
 (defadvice toggle-read-only (after jknav-update-keys)

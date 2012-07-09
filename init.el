@@ -48,7 +48,7 @@
 (custom-set-faces
  '(default ((t (:background "black" :foreground "#F8F8F2" :height 100))))
  '(highlight ((t (:background "grey5"))))
- '(show-paren-match ((t (:foreground "red")))))
+ '(show-paren-match ((t (:foreground "red" :background "black")))))
 
 (put 'narrow-to-region 'disabled nil)
 

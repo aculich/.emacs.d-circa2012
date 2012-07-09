@@ -50,6 +50,11 @@
                                     (format "M-%s" key)
                                     (format "C-%s" key))))))))
 
+(eval-after-load "magit"
+  '(progn
+     (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
+     (define-key magit-status-mode-map (kbd "C-k") 'magit-discard-item)))
+
 (defun jknav-install-keys-dired (&optional force)
   (interactive)
   (cond

@@ -7,6 +7,12 @@
 ;; be wary of everything you download and eval
 (custom-set-variables '(custom-safe-themes t))
 
+(defalias 'really-kill-buffer-1 'kill-buffer)
+(defun really-kill-buffer ()
+  (interactive)
+  (really-kill-buffer-1 nil))
+(global-set-key (kbd "C-c C-k") 'really-kill-buffer)
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)

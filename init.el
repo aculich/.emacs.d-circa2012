@@ -3,6 +3,10 @@
 
 (add-to-list 'load-path user-emacs-directory)
 
+;; the danger of themes is no worse than any other random code you load
+;; be wary of everything you download and eval
+(custom-set-variables '(custom-safe-themes t))
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)

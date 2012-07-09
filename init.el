@@ -38,6 +38,7 @@
 (set-cursor-color "red")
 
 (custom-set-faces
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(highlight ((t (:background "grey5"))))
  '(show-paren-match ((t (:foreground "red")))))
 

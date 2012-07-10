@@ -49,6 +49,13 @@
 ;; load custom-file after initializing packages
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
+;; FIX reload custom-file after initialization is complete so that
+;; user's customizations will override things set by other packages
+;; just in case those other packages are (wrongly) setting
+;; customization values. This is just a short-term fix. A better
+;; long-term fix is to prompt the user about which values should be
+;; overriden by the package vs the user.
+(add-hook 'after-init-hook '(lambda () (load custom-file t)) t)
 
 (set-face-attribute 'default nil :background "black" :foreground "#F8F8F2" :height 100)
 (set-face-attribute 'highlight nil :background "grey5")

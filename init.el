@@ -47,7 +47,7 @@
 
 ;; load custom-file after initializing packages
 (setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+(load custom-file t)
 
 (set-cursor-color "red")
 

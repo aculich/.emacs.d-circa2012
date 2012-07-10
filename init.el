@@ -124,6 +124,15 @@
 (define-key emacs-lisp-mode-map (kbd "C-<return>") 'paredit-close-round-and-newline)
 (define-key emacs-lisp-mode-map (kbd "C-M-9")      'paredit-close-round-and-newline-and-open-round)
 
+(defun mark-sexp-contents (&optional arg allow-extend)
+  (interactive "P\np")
+  (mark-sexp arg allow-extend)
+  (down-list)
+  (exchange-point-and-mark)
+  (backward-char)
+  (exchange-point-and-mark))
+(define-key emacs-lisp-mode-map (kbd "C-A-SPC")    'mark-sexp-contents)
+
 (defun isearch-yank-sexp ()
   "Pull next sexp from buffer into search string."
   (interactive)

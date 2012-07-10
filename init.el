@@ -5,7 +5,7 @@
 
 ;; the danger of themes is no worse than any other random code you load
 ;; be wary of everything you download and eval
-(custom-set-variables '(custom-safe-themes t))
+(setq custom-safe-themes t)
 
 (defalias 'really-kill-buffer-1 'kill-buffer)
 (defun really-kill-buffer ()

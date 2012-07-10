@@ -51,10 +51,9 @@
 
 (set-cursor-color "red")
 
-(custom-set-faces
- '(default ((t (:background "black" :foreground "#F8F8F2" :height 100))))
- '(highlight ((t (:background "grey5"))))
- '(show-paren-match ((t (:foreground "red" :background "black")))))
+(set-face-attribute 'default nil :background "black" :foreground "#F8F8F2" :height 100)
+(set-face-attribute 'highlight nil :background "grey5")
+(set-face-attribute 'show-paren-match nil :foreground "red" :background "black")
 
 (put 'narrow-to-region 'disabled nil)
 

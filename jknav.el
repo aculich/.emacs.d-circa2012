@@ -77,6 +77,7 @@
          (eq major-mode 'help-mode))
     (define-key help-mode-map (kbd "l")     'help-go-back)
     (define-key help-mode-map (kbd ".")     'help-go-forward)
+    (define-key help-mode-map (kbd "f")     'help-go-forward)
     (define-key help-mode-map (kbd "j")     'forward-button)
     (define-key help-mode-map (kbd "k")     'backward-button)
     (define-key help-mode-map (kbd ";")     'scroll-down))

@@ -79,6 +79,7 @@
 (global-set-key (kbd "C-M-S-l") 'switch-to-other-buffer)
 
 (define-key help-map "\C-w" 'find-function-on-key)
+(define-key help-map "\C-f" 'find-function-at-point)
 
 (defvar customize-apropos-map
   (let ((map (make-sparse-keymap)))

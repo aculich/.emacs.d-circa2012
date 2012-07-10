@@ -79,6 +79,37 @@
 
 (global-set-key (kbd "C-M-S-l") 'switch-to-other-buffer)
 
+(define-key help-map "\C-w" 'find-function-on-key)
+
+(defvar customize-apropos-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map "\C-a" 'customize-apropos)
+    (define-key map "\C-f" 'customize-apropos-faces)
+    (define-key map "\C-g" 'customize-apropos-groups)
+    (define-key map "\C-o" 'customize-apropos-options)
+    map)
+  "Keymap for characters following the Help Customize Apropos key.")
+
+(defvar customize-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map "\C-c" 'customize)
+    (define-key map "\C-a" customize-apropos-map) ;; prefix key
+    (define-key map "\C-b" 'customize-browse)
+    (define-key map "\C-f" 'customize-face)
+    (define-key map "\C-g" 'customize-group)
+    (define-key map "\C-m" 'customize-mode)
+    (define-key map "\C-n" 'customize-changed)
+    (define-key map "\C-o" 'customize-option)
+    (define-key map "\C-r" 'customize-rogue)
+    (define-key map "\C-s" 'customize-saved)
+    (define-key map "\C-t" 'customize-themes)
+    (define-key map "\C-u" 'customize-unsaved)
+    (define-key map "\C-v" 'customize-variable)
+    (define-key map "\C-z" 'customize-customized)
+    map)
+  "Keymap for characters following the Help Customize key.")
+(global-set-key (kbd "C-h C-c") customize-map)
+
 (define-key minibuffer-local-map
              [(meta tab)]       'file-cache-minibuffer-complete)
 (define-key minibuffer-local-map

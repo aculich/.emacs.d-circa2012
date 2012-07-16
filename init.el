@@ -123,6 +123,7 @@
 (define-key minibuffer-local-map
              [(control tab)]    'other-window)
 
+(autoload 'paredit-close-round-and-newline "paredit")
 (defun paredit-close-round-and-newline-and-open-round ()
   (interactive)
   (paredit-close-round-and-newline)

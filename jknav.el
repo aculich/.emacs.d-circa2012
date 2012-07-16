@@ -25,6 +25,7 @@
 
 ;;; Code:
 
+;;;###autoload
 (defun jknav-uninstall-keys ()
   (interactive)
   (local-unset-key (kbd "j"))
@@ -55,6 +56,7 @@
      (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
      (define-key magit-status-mode-map (kbd "C-k") 'magit-discard-item)))
 
+;;;###autoload
 (defun jknav-install-keys-dired (&optional force)
   (interactive)
   (cond
@@ -70,6 +72,7 @@
     (local-set-key (kbd ";")   'scroll-down-command))
    (t nil)))
 
+;;;###autoload
 (defun jknav-install-keys-help (&optional force)
   (interactive)
   (cond
@@ -83,6 +86,7 @@
     (define-key help-mode-map (kbd ";")     'scroll-down))
    (t nil)))
 
+;;;###autoload
 (defun jknav-install-keys (&optional force)
   (interactive)
   (cond

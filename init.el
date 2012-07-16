@@ -139,6 +139,8 @@
   (exchange-point-and-mark))
 (define-key emacs-lisp-mode-map (kbd "C-A-SPC")    'mark-sexp-contents)
 
+(turn-on-eldoc-mode)
+
 (defun isearch-yank-sexp ()
   "Pull next sexp from buffer into search string."
   (interactive)

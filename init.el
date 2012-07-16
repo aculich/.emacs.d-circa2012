@@ -178,3 +178,5 @@
   (if (get-buffer-process (current-buffer))
       ad-do-it
     (really-kill-buffer)))
+
+(require 'winner+)

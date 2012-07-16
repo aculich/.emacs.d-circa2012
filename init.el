@@ -84,6 +84,8 @@
 
 (global-set-key (kbd "C-M-S-l") 'switch-to-other-buffer)
 
+(defalias 'list-buffers 'ibuffer)
+
 (define-key help-map "\C-w" 'find-function-on-key)
 (define-key help-map "\C-f" 'find-function-at-point)
 

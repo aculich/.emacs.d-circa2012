@@ -126,8 +126,9 @@
 (autoload 'paredit-close-round-and-newline "paredit")
 (defun paredit-close-round-and-newline-and-open-round ()
   (interactive)
-  (paredit-close-round-and-newline)
-  (paredit-open-round))
+  (let ((blink-matching-paren nil))
+    (paredit-close-round-and-newline)
+    (paredit-open-round)))
 (define-key emacs-lisp-mode-map (kbd "C-<return>") 'paredit-close-round-and-newline)
 (define-key emacs-lisp-mode-map (kbd "C-M-9")      'paredit-close-round-and-newline-and-open-round)
 

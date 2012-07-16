@@ -44,7 +44,6 @@
 ;; turn menu-bar-mode back on by default since oddly both starter-kit and
 ;; sublime turn menus off, but that is a bad default for people new to emacs
 (menu-bar-mode 1)
-(set-cursor-color "green")
 
 ;; load custom-file after initializing packages
 (setq custom-file "~/.emacs.d/custom.el")
@@ -60,6 +59,7 @@
 (set-face-attribute 'default nil :background "black" :foreground "#F8F8F2" :height 120)
 (set-face-attribute 'highlight nil :background "grey5")
 (set-face-attribute 'show-paren-match nil :foreground "red" :background "black")
+(set-face-attribute 'cursor nil :background "red" :foreground "black")
 
 (put 'narrow-to-region 'disabled nil)
 

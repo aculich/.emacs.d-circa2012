@@ -57,7 +57,7 @@
 ;; overriden by the package vs the user.
 (add-hook 'after-init-hook '(lambda () (load custom-file t)) t)
 
-(set-face-attribute 'default nil :background "black" :foreground "#F8F8F2" :height 100)
+(set-face-attribute 'default nil :background "black" :foreground "#F8F8F2" :height 120)
 (set-face-attribute 'highlight nil :background "grey5")
 (set-face-attribute 'show-paren-match nil :foreground "red" :background "black")
 

@@ -63,8 +63,8 @@
 
 (put 'narrow-to-region 'disabled nil)
 
-(setq visible-bell nil
-      blink-cursor-mode nil)
+(setq visible-bell nil)
+(blink-cursor-mode -1)
 
 (defun other-window-reverse (arg)
   (interactive "p")

@@ -173,3 +173,8 @@
 
 (require 'jknav)
 (jknav-initialize)
+
+(defadvice kill-find (around really-kill-buffer activate)
+  (if (get-buffer-process (current-buffer))
+      ad-do-it
+    (really-kill-buffer)))

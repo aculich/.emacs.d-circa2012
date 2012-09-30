@@ -156,6 +156,23 @@
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)
 
+(defun dired-do-find-dired (args)
+  "Run `find' and go into Dired mode on a buffer of the output.
+The command run (after changing into DIR) is essentially
+
+    find . \\( ARGS \\) -ls
+
+except that the car of the variable `find-ls-option' specifies what to
+use in place of \"-ls\" as the final argument."
+  (interactive (list
+                (read-string "Run find (with args): " find-args
+                             '(find-args-history . 1))))
+  (find-dired default-directory args))
+
+(eval-after-load "dired"
+  '(progn
+     (define-key dired-mode-map (kbd "f") 'dired-do-find-dired)))
+
 (eval-after-load "dired+"
   '(progn
      (setq diredp-font-lock-keywords-1 nil)))

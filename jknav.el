@@ -56,6 +56,20 @@
      (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
      (define-key magit-status-mode-map (kbd "C-k") 'magit-discard-item)))
 
+(defun jknav-widget-forward (&optional arg)
+  (interactive "p")
+  (when (and (eq (face-at-point) 'widget-button)
+             (save-excursion
+               (beginning-of-line)
+               (funcall (or (< arg 0)
+                            'search-backward-regexp
+                            'search-forward-regexp)
+                "^\\w" (+ 1 (point))))) t))
+
+(defun jknav-widget-backward (&optional arg)
+  (interactive "p")
+  (jknav-widget-forward -1))
+
 ;;;###autoload
 (defun jknav-install-keys-dired (&optional force)
   (interactive)

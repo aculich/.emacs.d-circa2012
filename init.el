@@ -156,6 +156,7 @@
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-c C-v") 'magit-status)
 
+(autoload 'find-dired "find-dired")
 (defun dired-do-find-dired (args)
   "Run `find' and go into Dired mode on a buffer of the output.
 The command run (after changing into DIR) is essentially

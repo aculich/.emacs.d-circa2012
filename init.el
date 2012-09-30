@@ -177,6 +177,24 @@
 (require 'jknav)
 (jknav-initialize)
 
+;; ---------------------------------------------------------------------
+
+;; Ring navigation:
+;; M-g ]         Go to next search results buffer, restore its current search context
+;; M-g [         Ditto, but selects previous buffer.
+;;               Navigation is cyclic.
+;;
+;; Stack navigation:
+;; M-g -         Pop to previous search results buffer (kills top search results buffer)
+;; M-g _         Clear the search results stack (kills all grep-a-lot buffers!)
+;;
+;; Other:
+;; M-g =         Restore buffer and position where current search started
+
+(require 'grep-a-lot)
+(grep-a-lot-setup-keys)
+(grep-a-lot-advise igrep)
+
 (defadvice kill-find (around really-kill-buffer activate)
   (if (get-buffer-process (current-buffer))
       ad-do-it

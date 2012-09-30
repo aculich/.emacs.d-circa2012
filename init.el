@@ -66,6 +66,13 @@
 (setq visible-bell nil)
 (blink-cursor-mode -1)
 
+
+(require 'yasnippet)
+(let ((dir (expand-file-name "snippets" user-emacs-directory)))
+  (when dir
+    (add-to-list 'yas/root-directory dir t)
+    (yas/reload-all)))
+
 (defun other-window-reverse (arg)
   (interactive "p")
   (other-window (- (or arg 1))))

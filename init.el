@@ -29,7 +29,8 @@
      less-css-mode magit markdown-mode minimap monokai-theme
      mustache-mode paredit pivotal-tracker sass-mode smex
      starter-kit starter-kit-bindings starter-kit-eshell
-     starter-kit-js undo-tree virtualenv wget yaml-mode)))
+     starter-kit-js undo-tree virtualenv wget yaml-mode
+     yasnippet yasnippet-bundle)))
 
 ;; add sublime-sanity to the sart of the load-path to override the sublime
 ;; package if it is already installed

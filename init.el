@@ -183,3 +183,7 @@
     (really-kill-buffer)))
 
 (require 'winner+)
+
+(eval-after-load "minimap"
+  '(progn
+     (setq minimap-window-location 'right)))

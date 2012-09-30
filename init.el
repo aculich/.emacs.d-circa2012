@@ -157,7 +157,8 @@
 (global-set-key (kbd "C-c C-v") 'magit-status)
 
 (eval-after-load "dired+"
-  (setq diredp-font-lock-keywords-1 nil))
+  '(progn
+     (setq diredp-font-lock-keywords-1 nil)))
 
 (global-set-key (kbd "C-c a"  ) 'org-agenda)
 (global-set-key (kbd "C-c C-b") 'org-iswitchb)

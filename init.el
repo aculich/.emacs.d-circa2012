@@ -32,12 +32,26 @@
      starter-kit-js undo-tree virtualenv wget yaml-mode
      yasnippet yasnippet-bundle)))
 
-;; add sublime-sanity to the sart of the load-path to override the sublime
-;; package if it is already installed
-(unless (file-exists-p (expand-file-name "sublime-sanity"))
-  (shell-command
-   "git clone https://github.com/aculich/sublime-sanity.el.git ~/.emacs.d/sublime-sanity"))
-(add-to-list 'load-path (expand-file-name "sublime-sanity" user-emacs-directory))
+;; bootstrap sublime-sanity and snippets from github repos. Add to the start
+;; of the load-path to override the sublime package if it is already installed
+(defvar bootstrap-repos
+  '(("https://github.com/aculich/sublime-sanity.el.git" "sublime-sanity" t)
+    ("https://github.com/aculich/snippets.git" "snippets" nil))
+  "`bootstrap-repos' is a list of lists of the form (REPO LOCALNAME LOADPATH).
+If non-nil then LOADPATH can be 'append or anything to prepend.")
+(defun bootstrap-repos ()
+  (mapcar (lambda (arg)
+            (multiple-value-bind (repo localname loadpath) arg
+              (let ((dir (expand-file-name localname user-emacs-directory)))
+
+                (unless (file-exists-p dir)
+                  (shell-command (mapconcat 'identity (list "git clone" repo dir) " ")))
+                (when loadpath
+                  (add-to-list 'load-path dir
+                               (cond ((eq loadpath 'append) t)
+                                     (t t)))))))
+          bootstrap-repos))
+(bootstrap-repos)
 (delete-other-windows)
 (load "sublime")
 

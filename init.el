@@ -2,6 +2,7 @@
   "The default system `load-path' before we modify it.")
 
 (add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path (expand-file-name "setup" user-emacs-directory))
 
 ;; the danger of themes is no worse than any other random code you load
 ;; be wary of everything you download and eval

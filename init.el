@@ -14,24 +14,18 @@
   (really-kill-buffer-1 nil))
 (global-set-key (kbd "C-c C-k") 'really-kill-buffer)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-refresh-contents)
-(package-initialize)
-(unless package-activated-list
-  (mapcar
-   (lambda (x)
-     (ignore-errors (package-install x)))
-   '(browse-kill-ring coffee-mode csv-mode desktop dircmp dired+
-     dired-details dired-details+ dired-single
-     find-file-in-project furl grep-a-lot haml-mode
-     ido-ubiquitous igrep image-dired+ ioccur ipython isearch+
-     less-css-mode magit markdown-mode minimap monokai-theme
-     mustache-mode paredit pivotal-tracker sass-mode smex
-     starter-kit starter-kit-bindings starter-kit-eshell
-     starter-kit-js undo-tree virtualenv wget yaml-mode
-     yasnippet yasnippet-bundle)))
+(defvar package-list
+  '(browse-kill-ring coffee-mode csv-mode desktop dircmp dired+
+   dired-details dired-details+ dired-single
+   find-file-in-project furl grep-a-lot haml-mode
+   ido-ubiquitous igrep image-dired+ ioccur ipython isearch+
+   jknav less-css-mode magit markdown-mode minimap monokai-theme
+   mustache-mode paredit pivotal-tracker sass-mode smex
+   starter-kit starter-kit-bindings starter-kit-eshell
+   starter-kit-js undo-tree virtualenv wget yaml-mode
+   yasnippet yasnippet-bundle))
+(require 'setup-package)
+(packages-install)
 
 ;; bootstrap sublime-sanity and snippets from github repos. Add to the start
 ;; of the load-path to override the sublime package if it is already installed

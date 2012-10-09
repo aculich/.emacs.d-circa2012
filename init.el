@@ -28,7 +28,7 @@
    mustache-mode paredit pivotal-tracker sass-mode smex
    starter-kit starter-kit-bindings starter-kit-eshell
    starter-kit-js undo-tree virtualenv wget yaml-mode
-   yasnippet yasnippet-bundle))
+   yasnippet yasnippet-bundle sublime-sanity))
 (require 'setup-package)
 (packages-install)
 

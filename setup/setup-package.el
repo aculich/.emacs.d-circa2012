@@ -13,6 +13,7 @@
 ;;;; checked out.
 
 (defun package-git-submodule-update (path)
+  (vc-git-command (current-buffer) 0 nil "init")
   (let* ((default-directory user-emacs-directory)
          (root (vc-git-root default-directory))
          (l (with-temp-buffer

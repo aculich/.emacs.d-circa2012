@@ -19,8 +19,8 @@
               (rename-buffer "*vc-git-update*" t)
               (vc-git-command (current-buffer) 0 nil
                               "submodule" "update" "--" path)))
-         (mapcar (lambda (x) 
-                   (add-to-list 'load-path (expand-file-name path user-emacs-directory))) 
+         (mapcar (lambda (x)
+                   (add-to-list 'load-path (expand-file-name path user-emacs-directory)))
                  l))))
 
 (defsubst package-desc-path (desc)

@@ -13,16 +13,16 @@
 ;;;; checked out.
 
 (defun package-git-submodule-update (path)
-  (vc-git-command (current-buffer) 0 nil "init")
   (let* ((default-directory user-emacs-directory)
-         (root (vc-git-root default-directory))
-         (l (with-temp-buffer
+         (root (vc-git-root default-directory)))
+    (with-temp-buffer
+      (vc-git-command (current-buffer) 0 nil "submodule" "init"))
+    (with-temp-buffer
               (rename-buffer "*vc-git-update*" t)
               (vc-git-command (current-buffer) 0 nil
-                              "submodule" "update" "--" path)))
-         (mapcar (lambda (x)
-                   (add-to-list 'load-path (expand-file-name path user-emacs-directory)))
-                 l))))
+                              "submodule" "update" "--" path))
+      (add-to-list 'load-path (expand-file-name path user-emacs-directory))))
+
 
 (defsubst package-desc-path (desc)
   "Extract the kind of download from an archive package description vector."

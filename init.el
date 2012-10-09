@@ -1,8 +1,13 @@
 (defvar default-load-path load-path
   "The default system `load-path' before we modify it.")
 
-(add-to-list 'load-path user-emacs-directory)
+(defvar site-lisp-path (expand-file-name "site-lisp" user-emacs-directory))
+(defvar sublime-lisp-path (expand-file-name "site-lisp/sublime-sanity" user-emacs-directory))
+(add-to-list 'load-path site-lisp-path)
+(add-to-list 'load-path sublime-lisp-path)
 (add-to-list 'load-path (expand-file-name "setup" user-emacs-directory))
+(add-to-list 'load-path user-emacs-directory) ;; let this override everything
+
 
 ;; the danger of themes is no worse than any other random code you load
 ;; be wary of everything you download and eval

@@ -32,28 +32,7 @@
 (require 'setup-package)
 (packages-install)
 
-;; bootstrap sublime-sanity and snippets from github repos. Add to the start
-;; of the load-path to override the sublime package if it is already installed
-(defvar bootstrap-repos
-  '(("https://github.com/aculich/sublime-sanity.el.git" "sublime-sanity" t)
-    ("https://github.com/aculich/snippets.git" "snippets" nil))
-  "`bootstrap-repos' is a list of lists of the form (REPO LOCALNAME LOADPATH).
-If non-nil then LOADPATH can be 'append or anything to prepend.")
-(defun bootstrap-repos ()
-  (mapcar (lambda (arg)
-            (multiple-value-bind (repo localname loadpath) arg
-              (let ((dir (expand-file-name localname user-emacs-directory)))
-
-                (unless (file-exists-p dir)
-                  (shell-command (mapconcat 'identity (list "git clone" repo dir) " ")))
-                (when loadpath
-                  (add-to-list 'load-path dir
-                               (cond ((eq loadpath 'append) t)
-                                     (t t)))))))
-          bootstrap-repos))
-(bootstrap-repos)
-(delete-other-windows)
-(load "sublime")
+(require 'sublime)
 
 ;; turn menu-bar-mode back on by default since oddly both starter-kit and
 ;; sublime turn menus off, but that is a bad default for people new to emacs

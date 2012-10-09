@@ -37,7 +37,20 @@
    jump-char mark-multiple multiple-cursors pabbrev perspective
    php-mode puppet-mode ruby-end smex smooth-scroll undo-tree wgrep
    wrap-region yaml-mode zencoding fill-column-indicator
-   expand-region ido-ubiquitous))
+   expand-region ido-ubiquitous
+
+;   annoying-arrows-mode bash-completion buster-mode
+;   buster-snippets change-inner crappy-jsp-mode eproject espect
+;   find-file-in-project hardcore-mode keydef js2-refactor rhtml-mode
+
+  ))
+
+;;;; also add as submodules:
+;; zoom-frm.el
+;; top-mode.el
+;; shell-command.el
+;; frame-fns.el
+;; frame-cmds.el
 
 (require 'setup-package)
 

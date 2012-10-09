@@ -107,7 +107,7 @@ using `package-compute-transaction'."
 
 (defadvice package-refresh-contents
   (after git-submodule-archive-contents activate)
-  (package-ref))
+  (package-refresh-git-submodule))
 
 (defun package-upgrade (package &optional install-if-missing)
   (let* ((package (if (stringp package)

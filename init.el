@@ -30,7 +30,6 @@
    starter-kit-js undo-tree virtualenv wget yaml-mode
    yasnippet yasnippet-bundle sublime-sanity))
 (require 'setup-package)
-(packages-install)
 
 (require 'sublime)
 

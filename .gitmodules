@@ -1,0 +1,3 @@
+[submodule "site-lisp/snippets"]
+	path = site-lisp/snippets
+	url = https://github.com/aculich/snippets.git

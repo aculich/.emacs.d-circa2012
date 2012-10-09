@@ -7,3 +7,6 @@
 [submodule "site-lisp/jknav"]
 	path = site-lisp/jknav
 	url = https://github.com/aculich/jknav.el.git
+[submodule "snippets"]
+	path = snippets
+	url = https://aculich@github.com/aculich/snippets.git

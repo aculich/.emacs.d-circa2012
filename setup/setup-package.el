@@ -119,7 +119,7 @@ using `package-compute-transaction'."
     (when (package-installed-p package version)
       (package-install package))))
 
-(defun packages-install (&optional packages)
+(defun package-install-packages (&optional packages)
   (interactive)
   (let ((installed-list))
     (save-window-excursion
@@ -146,5 +146,7 @@ using `package-compute-transaction'."
                   package-archives))
   (package-refresh-contents))
 (package-refresh-git-submodule)
+(package-install-packages)
+
 
 (provide 'setup-package)

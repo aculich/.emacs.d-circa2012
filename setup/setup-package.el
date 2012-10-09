@@ -1,3 +1,4 @@
+(require 'cl)
 (require 'package)
 (require 'vc-git)
 

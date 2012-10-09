@@ -30,7 +30,15 @@
    mustache-mode paredit pivotal-tracker sass-mode smex
    starter-kit starter-kit-bindings starter-kit-eshell
    starter-kit-js undo-tree virtualenv wget yaml-mode
-   yasnippet yasnippet-bundle sublime-sanity))
+   yasnippet yasnippet-bundle sublime-sanity
+
+   ace-jump-mode coffee-mode browse-kill-ring delsel diminish
+   apache-mode evil feature-mode groovy-mode jade-mode js2-mode
+   jump-char mark-multiple multiple-cursors pabbrev perspective
+   php-mode puppet-mode ruby-end smex smooth-scroll undo-tree wgrep
+   wrap-region yaml-mode zencoding fill-column-indicator
+   expand-region ido-ubiquitous))
+
 (require 'setup-package)
 
 (require 'sublime)

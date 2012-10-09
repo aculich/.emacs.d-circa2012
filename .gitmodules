@@ -10,3 +10,45 @@
 [submodule "snippets"]
 	path = snippets
 	url = https://aculich@github.com/aculich/snippets.git
+[submodule "site-lisp/js2-refactor"]
+	path = site-lisp/js2-refactor
+	url = https://github.com/magnars/js2-refactor.el.git
+[submodule "site-lisp/smart-forward"]
+	path = site-lisp/smart-forward
+	url = https://github.com/magnars/smart-forward.el.git
+[submodule "site-lisp/expand-region"]
+	path = site-lisp/expand-region
+	url = https://github.com/magnars/expand-region.el.git
+[submodule "site-lisp/annoying-arrows-mode"]
+	path = site-lisp/annoying-arrows-mode
+	url = https://github.com/magnars/annoying-arrows-mode.el.git
+[submodule "site-lisp/buster-snippets"]
+	path = site-lisp/buster-snippets
+	url = https://github.com/magnars/buster-snippets.el.git
+[submodule "site-lisp/buster-mode"]
+	path = site-lisp/buster-mode
+	url = https://github.com/magnars/buster-mode.git
+[submodule "site-lisp/change-inner"]
+	path = site-lisp/change-inner
+	url = https://github.com/magnars/change-inner.el.git
+[submodule "site-lisp/crappy-jsp-mode"]
+	path = site-lisp/crappy-jsp-mode
+	url = https://github.com/magnars/crappy-jsp-mode.git
+[submodule "site-lisp/multifiles"]
+	path = site-lisp/multifiles
+	url = https://github.com/magnars/multifiles.el.git
+[submodule "site-lisp/hardcore-mode"]
+	path = site-lisp/hardcore-mode
+	url = https://github.com/magnars/hardcore-mode.el.git
+[submodule "site-lisp/emacs-bash-completion"]
+	path = site-lisp/emacs-bash-completion
+	url = https://github.com/szermatt/emacs-bash-completion.git
+[submodule "site-lisp/eproject"]
+	path = site-lisp/eproject
+	url = https://github.com/jrockway/eproject.git
+[submodule "site-lisp/find-file-in-project"]
+	path = site-lisp/find-file-in-project
+	url = https://github.com/technomancy/find-file-in-project.git
+[submodule "site-lisp/rhtml"]
+	path = site-lisp/rhtml
+	url = https://github.com/eschulte/rhtml.git

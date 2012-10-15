@@ -1,5 +1,5 @@
-[submodule "site-lisp/sublime-sanity"]
-	path = site-lisp/sublime-sanity
+[submodule "site-lisp/sublime"]
+	path = site-lisp/sublime
 	url = https://github.com/aculich/sublime-sanity.el.git
 [submodule "site-lisp/jknav"]
 	path = site-lisp/jknav

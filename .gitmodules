@@ -6,7 +6,7 @@
 	url = https://github.com/aculich/jknav.el.git
 [submodule "snippets"]
 	path = snippets
-	url = https://aculich@github.com/aculich/snippets.git
+	url = https://github.com/aculich/snippets.git
 [submodule "site-lisp/js2-refactor"]
 	path = site-lisp/js2-refactor
 	url = https://github.com/magnars/js2-refactor.el.git

@@ -1,6 +1,3 @@
-[submodule "site-lisp/snippets"]
-	path = site-lisp/snippets
-	url = https://github.com/aculich/snippets.git
 [submodule "site-lisp/sublime-sanity"]
 	path = site-lisp/sublime-sanity
 	url = https://github.com/aculich/sublime-sanity.el.git

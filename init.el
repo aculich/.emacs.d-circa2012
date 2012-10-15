@@ -2,7 +2,7 @@
   "The default system `load-path' before we modify it.")
 
 (defvar site-lisp-path (expand-file-name "site-lisp" user-emacs-directory))
-(defvar sublime-lisp-path (expand-file-name "site-lisp/sublime-sanity" user-emacs-directory))
+(defvar sublime-lisp-path (expand-file-name "site-lisp/sublime" user-emacs-directory))
 (defvar jknav-lisp-path (expand-file-name "site-lisp/jknav" user-emacs-directory))
 (add-to-list 'load-path site-lisp-path)
 (add-to-list 'load-path sublime-lisp-path)
